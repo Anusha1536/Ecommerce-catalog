@@ -1,5 +1,5 @@
 import "../style/catalog.css";
-import {ProductImg, CompanyImg} from "./productImg";
+import {ProductImg} from "./productImg";
 
 type CatalogProps = {
   name: string;
@@ -15,7 +15,6 @@ function Catalog({ name, price, desc, img }: CatalogProps) {
       <div>{name}</div>
       <div>{price}</div>
       <div>{desc}</div>
-      <CompanyImg/>
     </div>
   );
 }
