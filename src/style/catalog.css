@@ -41,3 +41,40 @@
   background-color: #333;
   color: white;
 }
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  justify-items: center;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.product-list:only-child,
+.product-list:has(.product-card:only-child) {
+  justify-items: start;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 32px 16px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain; /* Keeps image aspect ratio, fits inside the square */
+  background: #f4f4f4; /* Optional: light background for empty space */
+  border-radius: 12px;  /* Optional: rounded corners */
+  display: block;
+  margin: 0 auto 16px auto;
+}
