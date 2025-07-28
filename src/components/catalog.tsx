@@ -1,17 +1,5 @@
 import "./../style/catalog.css"; // Assuming styling is here
-
-// const categories = [
-//   "All",
-//   "Phone",
-//   "Electronic",
-//   "Beauty Products",
-//   "Footwear",
-//   "Eyewear",
-//   "Accessories",
-//   "Home & Kitchen",
-//   "Books & Stationary",
-//   "Toys",
-// ];
+import { Link } from "react-router-dom";
 
 interface Product {
   id: number;
@@ -26,19 +14,22 @@ interface CatalogProps {
 }
 
 export default function Catalog({ products }: CatalogProps) {
-
   return (
     <div className="catalog-container">
-
-      {/* Product Cards will go here */}
-      <div className="product-list">
+      <div className={`product-list${products.length === 1 ? " single-item" : ""}`}>
         {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img src={product.img} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>{product.desc}</p>
-            <span>₹{product.price}</span>
-          </div>
+          <Link
+            to={`/product/${product.id}`}
+            key={product.id}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div className="product-card">
+              <img src={product.img} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>{product.desc}</p>
+              <span>₹{product.price}</span>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
