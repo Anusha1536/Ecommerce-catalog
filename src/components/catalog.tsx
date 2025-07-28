@@ -1,23 +1,44 @@
-import "../style/catalog.css";
-import {ProductImg} from "./productImg";
+import { useState } from "react";
+import "./../style/catalog.css"; // Assuming styling is here
 
-type CatalogProps = {
-  name: string;
-  price: number | string;
-  desc: string;
-  img: string;
-};
+const categories = [
+  "All",
+  "Phone",
+  "Electronic",
+  "Beauty Products",
+  "Footwear",
+  "Eyewear",
+  "Accessories",
+  "Home & Kitchen",
+  "Books & Stationary",
+  "Toys",
+];
 
-function Catalog({ name, price, desc, img }: CatalogProps) {
+export default function Catalog() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   return (
-    <div className="catalog-card">
-      <ProductImg img={img} />
-      <div>{name}</div>
-      <div>{price}</div>
-      <div>{desc}</div>
+    <div className="catalog-container">
+      {/* Search Input */}
+      <div className="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      {/* Horizontal Tabs */}
+      <div className="category-tabs">
+        {categories.map((cat) => (
+          <div
+            key={cat}
+            className={`tab ${selectedCategory === cat ? "active" : ""}`}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </div>
+        ))}
+      </div>
+
+      {/* Product Cards will go here */}
+      <div className="product-list">{/* ... */}</div>
     </div>
   );
 }
-
-export default Catalog;
-

@@ -1,0 +1,39 @@
+.home-container {
+  height: 100vh;
+  background-image: url('/images/bg-home.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 40px 60px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.home-content h1 {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.home-content button {
+  font-size: 1rem;
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.home-content button:hover {
+  background-color: #0056b3;
+}

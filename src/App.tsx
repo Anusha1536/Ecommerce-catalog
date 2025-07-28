@@ -1,16 +1,23 @@
-import Catalog from "./components/catalog"
-import reactsvg from './assets/react.svg'
-import viteImg from '/vite.svg'
-import samsung from '/images/samsung.png'
+import Catalog from "./components/catalog";
+import { products } from "./data/products";
+import "./style/catalog.css";
 
 function App() {
   return (
-    <>
-      <Catalog name="iphone" price="45000" desc="i dont know" img={reactsvg}/>
-      <Catalog name="nike" price="5000" desc="i know" img={viteImg}/>
-      <Catalog name="samsung" price="20000" desc="Nice Battery" img={samsung}/>
-    </>
-  )
+    <div className="app-background">
+      <div className="catalog-container">
+        {products.map((product) => (
+          <Catalog
+            key={product.id}
+            name={product.name}
+            price={product.price}
+            desc={product.desc}
+            img={product.img}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
