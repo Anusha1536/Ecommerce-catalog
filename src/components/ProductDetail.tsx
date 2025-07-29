@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../data/products";
+import "../style/catalog.css"; // or import "./ProductDetail.css" if you created a new file
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -11,13 +12,13 @@ export default function ProductDetail() {
   }
 
   return (
-    <div style={{ maxWidth: 700, margin: "40px auto", background: "#fff", borderRadius: 16, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", padding: 32 }}>
+    <div className="product-detail-container">
       <button onClick={() => navigate(-1)} style={{ marginBottom: 24 }}>← Back</button>
-      <div style={{ display: "flex", gap: 32 }}>
+      <div className="product-detail-flex">
         <img
           src={product.img}
           alt={product.name}
-          style={{ width: 300, height: 300, objectFit: "contain", background: "#f4f4f4", borderRadius: 12 }}
+          className="product-detail-img"
         />
         <div style={{ flex: 1 }}>
           <h2>{product.name}</h2>
