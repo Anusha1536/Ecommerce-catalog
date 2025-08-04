@@ -11,6 +11,7 @@ const categories = [
   "Home & Kitchen",
   "Books & Stationary",
   "Toys",
+  "Musical Instruments",
 ];
 
 interface FilterBarProps {
