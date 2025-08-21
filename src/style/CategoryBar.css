@@ -7,11 +7,22 @@
 }
 
 .search-bar {
-  padding: 8px;
   width: 100%;
+  padding: 10px 14px;
   margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
+  background-color: white;
 }
 
 .category-list {
@@ -29,3 +40,4 @@
   white-space: nowrap;
   cursor: pointer;
 }
+

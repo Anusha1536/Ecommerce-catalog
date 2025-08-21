@@ -2,15 +2,49 @@
   padding: 20px;
 }
 
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Change from center to stretch */
+}
+
 .search-bar {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  width: 85%; /* Change from 75% to 85% */
+  min-width: 260px;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  background: #f7fafd;
+  border-radius: 32px;
+  box-shadow: 0 2px 8px rgba(30, 30, 60, 0.08);
+  padding: 2px 16px;
+  border: 1.5px solid #1976d2;
+  transition: box-shadow 0.2s, border 0.2s;
+  position: relative;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  height: 100%;
 }
 
 .search-bar input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  background: transparent;
+  font-size: 1.08rem;
+  outline: none;
+  color: #222;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+  font-style: italic;
 }
 
 .category-tabs {
@@ -34,7 +68,13 @@
   cursor: pointer;
   white-space: nowrap;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.tab:hover {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
 }
 
 .tab.active {
@@ -57,9 +97,9 @@
 }
 
 .product-card {
-  background: #fff;
+  background: #ececec; /* Slightly darker grey */
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(30, 30, 60, 0.10);
   padding: 32px 16px;
   width: 100%;
   max-width: 320px;
@@ -67,6 +107,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  border: 1px solid #e3e8ee;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+  transform: translateY(-10px);
+  background: #cccccc; /* Even darker grey on hover */
+  border: 1.5px solid #1976d2;
 }
 
 .product-card img {
